@@ -1,6 +1,7 @@
 import React from 'react';
 import Poll from './pages/Poll';
 import { Routes, Route } from 'react-router-dom';
+import Preview from './pages/Preview';
 
 function App() {
     return (
@@ -8,6 +9,7 @@ function App() {
         <div className="w-full md:w-[768px] bg-white">
           <Routes>
             <Route path="/poll" element={<Poll />} />
+            <Route path="/preview" element={<Preview />} />
           </Routes>
         </div>
       </div>
