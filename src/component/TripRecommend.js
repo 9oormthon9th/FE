@@ -49,7 +49,6 @@ const TripRecommend = ({ startPos, endPos, centerPos }) => {
     const placeList = recommendationList.map(
         (recommendation) => recommendation.place
     );
-    console.log('recommend', recommendationList);
     return (
         <div className='space-y-4'>
             <div className='text-lg font-bold'>추천 일정</div>
