@@ -1,5 +1,5 @@
-import CourseIntro from './CourseIntro';
-import TripRecommend from './TripRecommend';
+import CourseIntro from '../component/CourseIntro';
+import TripRecommend from '../component/TripRecommend';
 import MyButton from '../component/MyButton';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { primaryColor } from '../theme/color';
