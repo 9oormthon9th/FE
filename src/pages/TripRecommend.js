@@ -4,7 +4,7 @@ import MarkeredMap from '../map/MarkeredMap.jsx';
 import { useState, useEffect } from 'react';
 import FullSearch from '../api/FullSearch';
 
-const TripRecommend = ({ centerPos }) => {
+const TripRecommend = ({ startPos, endPos, centerPos }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [recommendationList, setPlaces] = useState([]);
     const [currentPos, setCurrentPos] = useState({
@@ -26,7 +26,7 @@ const TripRecommend = ({ centerPos }) => {
             alert('Geolocation을 사용할 수 없어요..');
         }
         FullSearch(
-            [centerPos, centerPos, centerPos, centerPos, centerPos],
+            [startPos, centerPos, centerPos, endPos, endPos],
             '물회'
         )
             .then((data) => {

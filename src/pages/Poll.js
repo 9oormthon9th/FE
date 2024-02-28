@@ -5,10 +5,16 @@ import Title from '../component/Title';
 import { useNavigate } from 'react-router-dom';
 import Loading from '../mordal/Loading';
 import Example from '../mordal/Example';
+import { getAnswer, getFood, setInfo } from '../localstorage/auth';
 
 export default function Poll() {
-    const [answer, setAnswer] = useState('');
-    const [food, setFood] = useState('');
+    const [answer, setAnswer] = useState(() => {
+        return getAnswer() || '';
+    });
+
+    const [food, setFood] = useState(() => {
+        return getFood() || '';
+    });
     const [buttonEnabled, setButtonEnabled] = useState(true);
     const [loading, setLoading] = useState(false); // 로딩 상태 추가
     const [response, setResponse] = useState(null); // 백엔드 응답 상태 추가
@@ -17,48 +23,65 @@ export default function Poll() {
 
     const handleClick = async () => {
         setLoading(true);
-    
-        try {
-            const response = await fetch('백엔드 URL', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
+
+        // try {
+        //     const response = await fetch('백엔드 URL', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //         },
+        //         body: JSON.stringify({ answer: answer, food: food }),
+        //     });
+
+        //     const data = await response.json();
+
+        //     setResponse(data);
+        // } catch (error) {
+        //     console.error('백엔드 요청 실패:', error);
+        //     setResponse({ error: '일정 생성에 실패했습니다.' });
+        // } finally {
+        //     setLoading(false);
+        // }
+        navigate('/result', {
+            state: {
+                startPos: {
+                    lat: 33.55635,
+                    lng: 126.795841,
                 },
-                body: JSON.stringify({ answer: answer, food: food }),
-            });
-    
-            const data = await response.json();
-    
-            setResponse(data);
-        } catch (error) {
-            console.error('백엔드 요청 실패:', error);
-            setResponse({ error: '일정 생성에 실패했습니다.' });
-        } finally {
-            setLoading(false);
-        }
+                endPos: {
+                    lat: 33.45241,
+                    lng: 126.795841,
+                },
+                centerPos: { lat: 33.49999, lng: 126.795841 },
+                description:
+                    'ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ',
+            },
+        });
+        setLoading(false);
+
+        setInfo(answer, food);
     };
 
     const styleAnswer = (answer) => {
-        const prefixed = answer.startsWith("#")
-          ? answer
-          : `#${answer}`;
-        const erased = prefixed.length === 1 ? "" : prefixed;
-        return erased;
+        const prefixed = answer.startsWith('#') ? answer : `#${answer}`;
+        // const erased = prefixed.length === 1 ? '' : prefixed;
+        return prefixed;
     };
 
     const handleAnswerChange = (event) => {
-        const newAnswer = styleAnswer(event.target.value);        
+        const newAnswer = styleAnswer(event.target.value);
         setAnswer(newAnswer);
-        checkConditions(newAnswer);
+        checkConditions();
     };
 
     const handleFoodChange = (event) => {
         const newFood = event.target.value;
         setFood(newFood.startsWith('#') ? newFood : `#${newFood}`);
+        checkConditions();
     };
 
-    const checkConditions = (answer) => {
-        if (answer.length > 1) {
+    const checkConditions = () => {
+        if (food.length > 0 && answer.length > 0) {
             setButtonEnabled(false);
         } else {
             setButtonEnabled(true);

@@ -12,7 +12,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import 'swiper/css';
 
-const CourseIntro = ({ centerPos }) => {
+const CourseIntro = ({ startPos, endPos, centerPos, description }) => {
     const imgList = [mock_image, firstCourse, untitle];
     return (
         // TODO: page layout can be extracted
@@ -44,15 +44,7 @@ const CourseIntro = ({ centerPos }) => {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-                <p>
-                    해안가의 정취를 느낄 수 있는 소금막과 삶과 문화가 숨쉬는
-                    서귀포 시내를 걸으며 서귀포의 문화와 생태를 접할 수 있는
-                    코스예요.
-                </p>
-                <p>
-                    서귀포 칼호텔 바당길과 허니문하우스 전망대 길에서 푸른
-                    바다의 파노라마를 즐겨보세요.
-                </p>
+                <p>{description}</p>
             </div>
         </>
     );

@@ -3,6 +3,7 @@ import Poll from './pages/Poll';
 import { Routes, Route } from 'react-router-dom';
 import Preview from './pages/Preview';
 import Home from './pages/Home';
+import ResultPage from './pages/ResultPage';
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
                     <Route path='/' element={<Home />} />
                     <Route path='/poll' element={<Poll />} />
                     <Route path='/preview' element={<Preview />} />
+                    <Route path='/result' element={<ResultPage />} />
                 </Routes>
             </div>
         </div>
