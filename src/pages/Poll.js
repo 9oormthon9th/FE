@@ -11,10 +11,17 @@ export default function Poll() {
     const handleClick = () => {
         console.log(1);
     };
+    const styleAnswer = (answer) => {
+        const prefixed = answer.startsWith("#")
+          ? answer
+          : `#${answer}`;
+        const erased = prefixed.length === 1 ? "" : prefixed;
+        return erased;
+    };
 
     const handleAnswerChange = (event) => {
-        const newAnswer = event.target.value;
-        setAnswer(newAnswer.startsWith('#') ? newAnswer : `#${newAnswer}`);
+        const newAnswer = styleAnswer(event.target.value);        
+        setAnswer(newAnswer);
         checkConditions(newAnswer);
     };
 
@@ -24,7 +31,7 @@ export default function Poll() {
     };
 
     const checkConditions = (answer) => {
-        if (answer.length > 1 || (answer.length === 1 && answer[0] !== '#')) {
+        if (answer.length > 1) {
             setButtonEnabled(false);
         } else {
             setButtonEnabled(true);
