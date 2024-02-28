@@ -1,6 +1,6 @@
 const { kakao } = window;
 
-export default async function CategorySearchOneAsync(centerPos) {
+export default async function KeywordSearchOneAsync(centerPos, keyword) {
   let places = new kakao.maps.services.Places();
 
   return new Promise((resolve, reject) => {
@@ -15,7 +15,7 @@ export default async function CategorySearchOneAsync(centerPos) {
       }
     };
 
-    places.categorySearch("FD6", callback, {
+    places.keywordSearch(keyword, callback, {
       location: new kakao.maps.LatLng(centerPos.lat, centerPos.lng),
       radius: 1000,
     });

@@ -1,15 +1,14 @@
 import React from "react";
 import { primaryColor } from "../theme/color";
 import MarkeredMap from "../map/MarkeredMap.jsx";
-// import { places } from "../mocks/places.js";
-import CategorySearchOneAsync from "../api/CategorySearchOneAsync.js";
 import { useState, useEffect } from "react";
+import KeywordSearchOneAsync from "../api/KeywordSearchOneAsync.js";
 
 const TripRecommend = ({ centerPos }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [place, setPlace] = useState(null);
   useEffect(() => {
-    CategorySearchOneAsync(centerPos).then((data) => {
+    KeywordSearchOneAsync(centerPos, "물회").then((data) => {
       setPlace(data);
       setIsLoading(false);
     }).catch((error) => {
