@@ -5,21 +5,36 @@ import { primaryColor } from '../theme/color';
 
 const Loading = () => {
     const [dots, setDots] = useState([]);
+    const groupConfig = [
+        { lines: 3, count: 7, initialOpacity: 30 },
+        { lines: 3, count: 10, initialOpacity: 15 },
+        { lines: 3, count: 7, initialOpacity: 15 },
+    ];
 
-    const renderDots = (number, opacity) => {
-        const numbers = [];
-        for (let i = 0; i < number; i++) {
-            numbers.push(
-                <Dot
-                    key={i}
-                    style={{
-                        opacity: (opacity + i * 5) * 0.01,
-                    }}
-                />
-            );
-        }
-        return numbers;
-    };
+    useEffect(() => {
+        const renderGroupsSequentially = async () => {
+            for (const group of groupConfig) {
+                for (let line = 0; line < group.lines; line++) {
+                    for (let i = 0; i < group.count; i++) {
+                        await new Promise((resolve) =>
+                            setTimeout(resolve, 500)
+                        );
+                        setDots((prevDots) => [
+                            ...prevDots,
+                            {
+                                groupId: groupConfig.indexOf(group),
+                                lineId: line,
+                                id: i,
+                                opacity: (group.initialOpacity + i * 5) * 0.01,
+                            },
+                        ]);
+                    }
+                }
+            }
+        };
+
+        renderGroupsSequentially();
+    }, []);
 
     return (
         <ViewContainer>
@@ -27,34 +42,22 @@ const Loading = () => {
                 <ModalContainer>
                     <Title text={'걸엉가게'} />
                     <TextBox>추천 정보를 불러오고 있어요</TextBox>
-                    <div
-                        style={{
-                            marginBottom: '2rem',
-                        }}
-                    >
-                        <DotContainer>{renderDots(7, 30)}</DotContainer>
-                        <div
-                            style={{ margin: '0.5rem', marginBottom: '1.5rem' }}
-                        ></div>
-                        <DotContainer>{renderDots(7, 50)}</DotContainer>
-                        <DotContainer>{renderDots(7, 70)}</DotContainer>
-                    </div>
-                    <div style={{ marginLeft: '4rem', marginBottom: '2rem' }}>
-                        <DotContainer>{renderDots(10, 15)}</DotContainer>
-                        <div
-                            style={{ margin: '0.5rem', marginBottom: '1.5rem' }}
-                        ></div>
-                        <DotContainer>{renderDots(10, 35)}</DotContainer>
-                        <DotContainer>{renderDots(10, 55)}</DotContainer>
-                    </div>
-                    <div style={{ marginLeft: '10rem' }}>
-                        <DotContainer>{renderDots(7, 30)}</DotContainer>
-                        <div
-                            style={{ margin: '0.5rem', marginBottom: '1.5rem' }}
-                        ></div>
-                        <DotContainer>{renderDots(7, 50)}</DotContainer>
-                        <DotContainer>{renderDots(7, 70)}</DotContainer>
-                    </div>
+                    <DotContainer>
+                        {dots.map((dot) => (
+                            <DotLine
+                                key={`group-${dot.groupId}-line-${dot.lineId}`}
+                            >
+                                <Dot
+                                    key={`${dot.groupId}-${dot.lineId}-${dot.id}`}
+                                    style={{
+                                        opacity: dot.opacity,
+                                        marginLeft:
+                                            dot.id === 0 ? '0' : '0.3rem',
+                                    }}
+                                />
+                            </DotLine>
+                        ))}
+                    </DotContainer>
                 </ModalContainer>
             </RootContainer>
         </ViewContainer>
@@ -86,10 +89,13 @@ const TextBox = styled.div`
     margin-bottom: 0.5rem;
 `;
 
+const DotLine = styled.div`
+    display: flex;
+`;
+
 const DotContainer = styled.div`
     display: flex;
-    /* flex-wrap: wrap; */
-    justify-content: flex-start;
+    flex-direction: column;
 `;
 
 const Dot = styled.div`

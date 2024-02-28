@@ -4,6 +4,7 @@ import MyButton from './../component/MyButton';
 import Title from '../component/Title';
 import { useNavigate } from 'react-router-dom';
 import Loading from '../mordal/Loading';
+import Example from '../mordal/Example';
 
 export default function Poll() {
     const [answer, setAnswer] = useState('');
@@ -11,8 +12,14 @@ export default function Poll() {
     const [buttonEnabled, setButtonEnabled] = useState(true);
     const [loading, setLoading] = useState(false); // 로딩 상태 추가
     const [response, setResponse] = useState(null); // 백엔드 응답 상태 추가
+
+    const [exampleModalOpen, setExampleModalOpen] = useState(false);
+
     const navigate = useNavigate();
 
+    const handleModal = () => {
+        setExampleModalOpen(true);
+    }
     const handleClick = async () => {
         setLoading(true); // 버튼 클릭 시 로딩 상태를 활성화합니다.
 
@@ -92,6 +99,10 @@ export default function Poll() {
                 onClick={handleClick}
                 disabled={buttonEnabled}
             />
+            <div onClick={handleModal}>
+                예시모달
+            </div>
+            {exampleModalOpen && <Example setExampleModalOpen={setExampleModalOpen}/>}
             {loading && <Loading />}
         </div>
     );
