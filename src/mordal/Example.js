@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { styled } from 'styled-components';
 import { IoClose } from 'react-icons/io5';
 
-const Example = ({ url, setExampleModalOpen }) => {
+const Example = ({ url, name, setExampleModalOpen }) => {
     return (
         <ViewContainer>
             <RootContainer>
                 <ModalContainer>
                     <ModalTitle>
-                        <ModalDetail>예시 모달</ModalDetail>
+                        <ModalDetail>{name}</ModalDetail>
                         <IoClose
                             size={'2rem'}
                             onClick={() => {

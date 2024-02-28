@@ -16,10 +16,12 @@ const TripRecommend = ({ startPos, endPos, centerPos }) => {
 
     const [exampleModalOpen, setExampleModalOpen] = useState(false);
     const [url, setUrl] = useState('');
+    const [name, setName] = useState('');
     const food = getFood();
-    const handleClick = (url) => {
+    const handleClick = (url, name) => {
         setExampleModalOpen(true);
         setUrl(url);
+        setName(name);
     };
 
     useEffect(() => {
@@ -63,7 +65,10 @@ const TripRecommend = ({ startPos, endPos, centerPos }) => {
                         key={index}
                         className='flex h-16 rounded-lg bg-[#F2F4F6]'
                         onClick={() => {
-                            handleClick(recommendation.place.place_url);
+                            handleClick(
+                                recommendation.place.place_url,
+                                recommendation.place.place_name
+                            );
                         }}
                         style={{ cursor: 'pointer' }}
                     >
@@ -81,7 +86,11 @@ const TripRecommend = ({ startPos, endPos, centerPos }) => {
                 ))}
             </div>
             {exampleModalOpen && (
-                <Example url={url} setExampleModalOpen={setExampleModalOpen} />
+                <Example
+                    url={url}
+                    name={name}
+                    setExampleModalOpen={setExampleModalOpen}
+                />
             )}
         </div>
     );
