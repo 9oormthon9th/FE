@@ -13,7 +13,7 @@ const parseOllehResponse = (response) => {
         totalKm: response['총 길이(KM)'],
         wheelchair: response['휠체어 구간 유무'],
         description: response['description'],
-        image1: response['image'],
+        image1: response['images'],
         image2: response['image2'],
     };
 };

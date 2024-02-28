@@ -28,8 +28,8 @@ export default function Poll() {
         setLoadingModalOpen(true); // 로딩 모달을 열어줍니다.
 
         const theme = answer.substring(1);
-        const {valid, result} = await testGpt(theme);
-        
+        const { valid, result } = await testGpt(theme);
+
         if (!valid) {
             navigate('/error');
             return;
@@ -45,6 +45,7 @@ export default function Poll() {
             navigate('/result', {
                 state: {
                     image1: result.image1,
+                    image2: result.image2,
                     courseName: result.courseNumber,
                     startPos: {
                         lat: result.startLat,
