@@ -1,7 +1,7 @@
 import parseOllehResponse from "./ollehResponse";
 
-const testGpt = async (theme) => {
-  const url = `https://k7c2e2155cca0a.user-app.krampoline.com/api/testchatgpt?theme=${theme}`;
+const testGpt = async (theme, test = false) => {
+  const url = `https://k7c2e2155cca0a.user-app.krampoline.com/api/${test ? "testchatgpt" : "chatgpt"}?theme=${theme}`;
   
   try {
     // Make a request to the server to get the image
