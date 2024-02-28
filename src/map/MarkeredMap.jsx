@@ -3,6 +3,8 @@ import { useState } from "react";
 
 export default function MarkeredMap({ centerPos, places }) {
   const [isOpen, setIsOpen] = useState(-1);
+  const [placeId, setPlaceId] = useState("");
+  const url = `https://place.map.kakao.com/${placeId}`;
 
   console.log("PLACES", places);
 
@@ -21,7 +23,10 @@ export default function MarkeredMap({ centerPos, places }) {
               key={place.place_name}
               position={{ lat: place.y, lng: place.x }}
               clickable={true}
-              onClick={() => setIsOpen(index)}
+              onClick={() => {
+                setIsOpen(index);
+                setPlaceId(place.id);
+              }}
             ></MapMarker>
             {isOpen === index && (
               <CustomOverlayMap position={{ lat: place.y, lng: place.x }}>
@@ -33,6 +38,7 @@ export default function MarkeredMap({ centerPos, places }) {
           </>
         ))}
       </Map>
+      <iframe id="iFrameExample" title="iFrame Example" src={url}></iframe>
     </>
   );
 }
