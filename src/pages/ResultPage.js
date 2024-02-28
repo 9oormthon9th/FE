@@ -7,7 +7,7 @@ const ResultPage = ({ centerPos }) => {
     <div className="p-12">
       <CourseIntro centerPos={centerPos} />
 
-      <hr className="my-8 border-none h-[1px] bg-black" />
+      <hr className="my-8 border-none h-[1px] bg-[#cdced6]" />
 
       <TripRecommend centerPos={centerPos} />
       

@@ -16,24 +16,28 @@ export default function Poll() {
     const navigate = useNavigate();
 
     const handleClick = async () => {
-        setLoading(true); // 버튼 클릭 시 로딩 상태를 활성화합니다.
-
+        setLoading(true);
+    
         try {
-            // 여기에 백엔드 요청 코드를 추가합니다.
-            // 예시: const result = await fetchBackendData(answer, food);
-
-            // 가상의 백엔드 응답 대신 setTimeout을 사용한 예시
-            await new Promise((resolve) => setTimeout(resolve, 200000));
-
-            // 요청이 완료되면 로딩 상태를 해제하고 응답 상태를 업데이트합니다.
-            setResponse({ message: '일정이 생성되었습니다!' });
+            const response = await fetch('백엔드 URL', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ answer: answer, food: food }),
+            });
+    
+            const data = await response.json();
+    
+            setResponse(data);
         } catch (error) {
             console.error('백엔드 요청 실패:', error);
             setResponse({ error: '일정 생성에 실패했습니다.' });
         } finally {
-            setLoading(false); // 요청 완료 후 로딩 상태를 비활성화합니다.
+            setLoading(false);
         }
     };
+
     const styleAnswer = (answer) => {
         const prefixed = answer.startsWith("#")
           ? answer
@@ -62,7 +66,6 @@ export default function Poll() {
     };
 
     useEffect(() => {
-        // response 상태가 업데이트되면 다른 페이지로 이동
         if (response) {
             navigate('/');
             console.log('백엔드 응답:', response);
