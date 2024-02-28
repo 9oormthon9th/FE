@@ -11,7 +11,8 @@ const parseOllehResponse = (response) => {
     courseName: response["올레길 코스 이름"],
     totalKm: response["총 길이(KM)"],
     wheelchair: response["휠체어 구간 유무"],
-    description: "설명 추가 필요",
+    description: response["description"],
+    image1: response["image"],
   };
 };
 

@@ -12,8 +12,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import 'swiper/css';
 
-const CourseIntro = ({ courseName, startPos, endPos, centerPos, description }) => {
-    const imgList = [mock_image, firstCourse, untitle];
+const CourseIntro = ({ image, courseName, startPos, endPos, centerPos, description }) => {
+    const imgList = [image, firstCourse, untitle];
     return (
       // TODO: page layout can be extracted
       <>
