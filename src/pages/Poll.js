@@ -52,7 +52,7 @@ export default function Poll() {
             //     setLoading(false);
             // }
 
-            // setLoadingModalOpen(false);
+            setLoadingModalOpen(false);
 
             // 처리가 완료된 후, navigate 함수를 사용하여 다른 페이지로 이동합니다.
             navigate('/result', {
@@ -72,7 +72,7 @@ export default function Poll() {
 
             // 사용자 입력 정보를 localStorage에 저장하는 등의 추가 처리를 할 수 있습니다.
             setInfo(answer, food);
-        }, 500000); // 5초 대기
+        }, 5000); // 5초 대기
     };
 
     const styleAnswer = (answer) => {
