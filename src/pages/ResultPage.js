@@ -8,7 +8,7 @@ import styled from 'styled-components';
 const ResultPage = () => {
     const location = useLocation();
     const response = { ...location.state };
-    
+
     const courseName = response.courseName;
     const centerPos = response.centerPos;
     const startPos = response.startPos;
@@ -31,7 +31,7 @@ const ResultPage = () => {
                 description={description}
             />
 
-            <hr className='my-8 border-none h-[1px] bg-[#cdced6]' />
+            <hr className='my-8 h-[2px] bg-[#cdced6]' />
 
             <TripRecommend
                 startPos={startPos}
@@ -56,7 +56,7 @@ const ResultContainer = styled.div`
     flex: 1;
     overflow-y: auto;
     scroll-behavior: smooth;
-    height: 45rem;
+    max-height: 45rem;
 
     &::-webkit-scrollbar {
         width: 5px;

@@ -1,18 +1,9 @@
 import React, { useState } from 'react';
 import { Map, MapMarker } from 'react-kakao-maps-sdk';
-import Example from '../mordal/Example';
-import redMarker from '../mocks/images/2.jpg';
 
 export default function MarkeredMap({ centerPos, currentPos, places }) {
     const [isOpen, setIsOpen] = useState(-1);
     const [placeId, setPlaceId] = useState('');
-    const url = `https://place.map.kakao.com/${placeId}`;
-
-    const [exampleModalOpen, setExampleModalOpen] = useState(false);
-
-    const handleModal = () => {
-        setExampleModalOpen(true);
-    };
 
     console.log('PLACES', places);
     console.log('center', centerPos);
@@ -25,6 +16,7 @@ export default function MarkeredMap({ centerPos, currentPos, places }) {
                 onClick={(_, mouseEvent) => {
                     setIsOpen(-1);
                 }}
+                level={7}
             >
                 {places.map((place, index) => (
                     <>
@@ -44,31 +36,7 @@ export default function MarkeredMap({ centerPos, currentPos, places }) {
                         )}
                     </>
                 ))}
-                <MapMarker
-                    position={{ lat: currentPos.lat, lng: currentPos.lng }}
-                    image={{
-                        src: redMarker, // 빨간색 마커 이미지 사용
-                        size: {
-                            width: 24,
-                            height: 32,
-                        }, // 마커 이미지의 크기
-                    }}
-                />
-                <MapMarker
-                    position={centerPos}
-                    image={{
-                        src: redMarker, // 빨간색 마커 이미지 사용
-                        size: {
-                            width: 24,
-                            height: 32,
-                        }, // 마커 이미지의 크기
-                    }}
-                />
             </Map>
-            <div onClick={handleModal}>예시모달</div>
-            {exampleModalOpen && (
-                <Example setExampleModalOpen={setExampleModalOpen} url={url} />
-            )}
         </>
     );
 }

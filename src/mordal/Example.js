@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { styled } from 'styled-components';
 import { IoClose } from 'react-icons/io5';
-import { Map, MapMarker } from 'react-kakao-maps-sdk';
 
 const Example = ({ url, setExampleModalOpen }) => {
     return (

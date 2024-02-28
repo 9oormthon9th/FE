@@ -3,6 +3,7 @@ import { primaryColor } from '../theme/color';
 import MarkeredMap from '../map/MarkeredMap.jsx';
 import { useState, useEffect } from 'react';
 import FullSearch from '../api/FullSearch';
+import Example from '../mordal/Example.js';
 
 const TripRecommend = ({ startPos, endPos, centerPos }) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -11,6 +12,14 @@ const TripRecommend = ({ startPos, endPos, centerPos }) => {
         lat: 33.4495744,
         lng: 126.9235712,
     });
+
+    const [exampleModalOpen, setExampleModalOpen] = useState(false);
+    const [url, setUrl] = useState('');
+
+    const handleClick = (url) => {
+        setExampleModalOpen(true);
+        setUrl(url);
+    };
 
     useEffect(() => {
         if (navigator.geolocation) {
@@ -25,10 +34,7 @@ const TripRecommend = ({ startPos, endPos, centerPos }) => {
         } else {
             alert('Geolocation을 사용할 수 없어요..');
         }
-        FullSearch(
-            [startPos, centerPos, centerPos, endPos, endPos],
-            '물회'
-        )
+        FullSearch([startPos, centerPos, centerPos, endPos, endPos], '물회')
             .then((data) => {
                 setPlaces(data);
                 setIsLoading(false);
@@ -43,7 +49,7 @@ const TripRecommend = ({ startPos, endPos, centerPos }) => {
     const placeList = recommendationList.map(
         (recommendation) => recommendation.place
     );
-
+    console.log('recommend', recommendationList);
     return (
         <div className='space-y-4'>
             <div className='text-lg font-bold'>추천 일정</div>
@@ -57,6 +63,10 @@ const TripRecommend = ({ startPos, endPos, centerPos }) => {
                     <div
                         key={index}
                         className='flex h-16 rounded-lg bg-[#F2F4F6]'
+                        onClick={() => {
+                            handleClick(recommendation.place.place_url);
+                        }}
+                        style={{ cursor: 'pointer' }}
                     >
                         <div className='w-20 flex'>
                             <div className='m-auto text-sm text-[#858899]'>
@@ -71,6 +81,9 @@ const TripRecommend = ({ startPos, endPos, centerPos }) => {
                     </div>
                 ))}
             </div>
+            {exampleModalOpen && (
+                <Example url={url} setExampleModalOpen={setExampleModalOpen} />
+            )}
         </div>
     );
 };
