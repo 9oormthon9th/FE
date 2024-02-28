@@ -28,7 +28,12 @@ export default function Poll() {
         setLoadingModalOpen(true); // 로딩 모달을 열어줍니다.
 
         const theme = answer.substring(1);
-        const result = await testGpt(theme);
+        const {valid, result} = await testGpt(theme);
+        
+        if (!valid) {
+            navigate('/error');
+            return;
+        }
 
         const randomDelay =
             // Math.floor(Math.random() * (15000 - 8000 + 1)) + 8000;

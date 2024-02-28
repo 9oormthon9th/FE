@@ -1,5 +1,5 @@
 import React, { Image } from 'react';
-import MyButton from '../component/MyButton';
+import MyButton from './MyButton';
 import { primaryColor } from '../theme/color';
 import TripRecommend from './TripRecommend';
 
