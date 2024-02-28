@@ -45,8 +45,7 @@ const RootContainer = styled.div`
     background-color: rgb(0 0 0 / 30%);
     -webkit-tap-highlight-color: transparent;
     justify-content: center;
-    padding: 1vh 1.5rem;
-    padding: 1vh 1.5rem;
+    padding: 1rem 1.5rem 1rem 1.5rem;
 `;
 
 const ModalContainer = styled.div`
@@ -75,7 +74,7 @@ const InputList = styled.div`
     flex: 1;
     overflow-y: auto;
     scroll-behavior: smooth;
-    height: 85vh;
+    height: 36rem;
 
     &::-webkit-scrollbar {
         width: 5px;

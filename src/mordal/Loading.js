@@ -40,7 +40,7 @@ const Loading = () => {
     };
 
     return (
-        <div className='flex bg-purple-500 justify-center'>
+        <div className='flex bg-black justify-center'>
             <ModalContainer>
                 <Title text={'걸엉가게'} />
                 <TextBox>추천 정보를 불러오고 있어요</TextBox>
@@ -84,11 +84,12 @@ const ModalContainer = styled.div`
 const TextBox = styled.div`
     color: #555f1a;
     margin-bottom: 0.5rem;
+    padding: 0 0 1.2rem 0.5rem;
 `;
 
 const FirstGroup = styled.div`
     display: flex;
-    margin-bottom: 1rem;
+    margin-bottom: 1.4rem;
 `;
 
 const SecondGroup = styled.div`

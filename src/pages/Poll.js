@@ -133,7 +133,7 @@ export default function Poll() {
                         value={food}
                         onChange={handleFoodChange}
                     />
-                    <div className='m-8' />
+                    <div className='m-5' />
                     <MyButton
                         text={'일정 생성하기'}
                         onClick={handleClick}

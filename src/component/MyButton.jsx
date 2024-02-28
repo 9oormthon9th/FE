@@ -10,7 +10,7 @@ const MyButton = ({ text, onClick, disabled = false, variant = false }) => {
         <SubmitButton
             disabled={disabled ? true : false}
             onClick={onClick}
-            className={`w-full h-full m-auto rounded p-2 ${
+            className={`w-full h-full m-auto rounded p-4 ${
                 variant ? variantStyle : primaryStyle
             } disabled:opacity-50`}
         >
@@ -22,6 +22,7 @@ const MyButton = ({ text, onClick, disabled = false, variant = false }) => {
 export default MyButton;
 
 const SubmitButton = styled.button`
+    font-size: large;
     &:hover {
         background-color: ${primaryColor};
         /* opacity: 0.5; */

@@ -7,7 +7,7 @@ import ResultPage from './pages/ResultPage';
 
 function App() {
     return (
-        <div className='flex h-screen bg-purple-500 justify-center'>
+        <div className='flex h-screen bg-black justify-center'>
             <div className='w-full md:w-[768px] bg-white'>
                 <Routes>
                     <Route path='/' element={<Home />} />
