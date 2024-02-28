@@ -7,11 +7,7 @@ import Loading from '../mordal/Loading';
 import Example from '../mordal/Example';
 import { getAnswer, getFood, setInfo } from '../localstorage/auth';
 
-import ready from "../backend/ready";
-
 export default function Poll() {
-    ready();
-    
     const [answer, setAnswer] = useState(() => {
         return getAnswer() || '';
     });
