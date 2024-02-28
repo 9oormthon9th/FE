@@ -13,13 +13,8 @@ export default function Poll() {
     const [loading, setLoading] = useState(false); // 로딩 상태 추가
     const [response, setResponse] = useState(null); // 백엔드 응답 상태 추가
 
-    const [exampleModalOpen, setExampleModalOpen] = useState(false);
-
     const navigate = useNavigate();
 
-    const handleModal = () => {
-        setExampleModalOpen(true);
-    }
     const handleClick = async () => {
         setLoading(true); // 버튼 클릭 시 로딩 상태를 활성화합니다.
 
@@ -99,11 +94,6 @@ export default function Poll() {
                 onClick={handleClick}
                 disabled={buttonEnabled}
             />
-            <div onClick={handleModal}>
-                예시모달
-            </div>
-            {exampleModalOpen && <Example setExampleModalOpen={setExampleModalOpen}/>}
-            {loading && <Loading />}
         </div>
     );
 }

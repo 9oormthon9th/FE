@@ -1,10 +1,17 @@
 import { CustomOverlayMap, Map, MapMarker } from "react-kakao-maps-sdk";
 import { useState } from "react";
+import Example from "../mordal/Example";
+import Loading from "../mordal/Loading";
 
 export default function MarkeredMap({ centerPos, places }) {
   const [isOpen, setIsOpen] = useState(-1);
   const [placeId, setPlaceId] = useState("");
   const url = `https://place.map.kakao.com/${placeId}`;
+
+  const [exampleModalOpen, setExampleModalOpen] = useState(false);
+  const handleModal = () => {
+    setExampleModalOpen(true);
+  };
 
   console.log("PLACES", places);
 
@@ -38,7 +45,10 @@ export default function MarkeredMap({ centerPos, places }) {
           </>
         ))}
       </Map>
-      <iframe id="iFrameExample" title="iFrame Example" src={url}></iframe>
+      <div onClick={handleModal}>예시모달</div>
+      {exampleModalOpen && (
+        <Example setExampleModalOpen={setExampleModalOpen} url={url} />
+      )}
     </>
   );
 }
