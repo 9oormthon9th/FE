@@ -22,6 +22,7 @@ const CourseIntro = () => {
         </p>
       </div>
       <MyButton text="자세히 보기" onClick={() => {}} />
+      <MyButton text="처음으로" onClick={() => {}} variant />
     </div>
   );
 };
