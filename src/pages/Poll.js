@@ -29,7 +29,7 @@ export default function Poll() {
 
         const theme = answer.substring(1);
         const result = await testGpt(theme);
-
+        console.log('result', result);
         const randomDelay =
             // Math.floor(Math.random() * (15000 - 8000 + 1)) + 8000;
             2000;

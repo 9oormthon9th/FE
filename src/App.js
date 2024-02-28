@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Preview from './pages/Preview';
 import Home from './pages/Home';
 import ResultPage from './pages/ResultPage';
+import Error from './pages/Error';
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                     <Route path='/poll' element={<Poll />} />
                     <Route path='/preview' element={<Preview />} />
                     <Route path='/result' element={<ResultPage />} />
+                    <Route path='/error' element={<Error />} />
                 </Routes>
             </div>
         </div>

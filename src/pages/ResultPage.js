@@ -10,6 +10,7 @@ const ResultPage = () => {
     const response = { ...location.state };
 
     const image1 = response.image1;
+    const image2 = response.image2;
     const courseName = response.courseName;
     const centerPos = response.centerPos;
     const startPos = response.startPos;
@@ -25,7 +26,8 @@ const ResultPage = () => {
     return (
         <ResultContainer>
             <CourseIntro
-                image={image1}
+                image1={image1}
+                image2={image2}
                 courseName={courseName}
                 startPos={startPos}
                 endPos={endPos}

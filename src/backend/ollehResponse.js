@@ -1,5 +1,5 @@
 const parseOllehResponse = (response) => {
-
+    console.log('response', response);
     return {
         startPlace: response['시작점'],
         endPlace: response['종점'],
@@ -14,6 +14,7 @@ const parseOllehResponse = (response) => {
         wheelchair: response['휠체어 구간 유무'],
         description: response['description'],
         image1: response['image'],
+        image2: response['image2'],
     };
 };
 
