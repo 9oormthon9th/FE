@@ -25,10 +25,8 @@ const TripRecommend = ({ centerPos }) => {
   );
 
   return (
-    <div className="p-12 space-y-4">
-      <h1 className={`text-3xl jeju-font text-[${primaryColor}]`}>
-        6 코스 추천 일정
-      </h1>
+    <div className="space-y-4">
+      <div className="text-lg font-bold">추천 일정</div>
       <MarkeredMap centerPos={centerPos} places={!isLoading ? placeList : []} />
       <div className="space-y-4">
         {recommendationList.map((recommendation, index) => (

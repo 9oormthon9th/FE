@@ -2,11 +2,12 @@ import React, { Image } from "react";
 import MyButton from "../component/MyButton";
 import mock_image from "../mocks/images/2.jpg";
 import { primaryColor } from "../theme/color";
+import TripRecommend from "./TripRecommend";
 
-const CourseIntro = () => {
+const CourseIntro = ({ centerPos }) => {
   return (
     // TODO: page layout can be extracted
-    <div className="p-12 space-y-4">
+    <>
       <h1 className={`text-3xl jeju-font text-[${primaryColor}]`}>
         6 코스를 추천해드리고 싶어요
       </h1>
@@ -21,9 +22,7 @@ const CourseIntro = () => {
           파노라마를 즐겨보세요.
         </p>
       </div>
-      <MyButton text="자세히 보기" onClick={() => {}} />
-      <MyButton text="처음으로" onClick={() => {}} variant />
-    </div>
+    </>
   );
 };
 
