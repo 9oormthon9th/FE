@@ -2,7 +2,7 @@ import React from "react";
 
 const MyButton = ({ text, onClick, disabled = false, variant = false }) => {
   const primaryStyle = `bg-[#555F1A] text-white border-none`;
-  const variantStyle = `bg-white text-[#555F1A] border-2 border-[#555F1A]`;
+  const variantStyle = `bg-white text-[#555F1A] border-[1px] border-[#555F1A]`;
 
   return (
     <button
