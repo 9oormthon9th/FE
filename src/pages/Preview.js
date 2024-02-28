@@ -1,9 +1,8 @@
-import MyButton from "../component/MyButton";
-import CourseIntro from "./CourseIntro";
+import { currentPos } from "../mocks/currentPos";
 import TripRecommend from "./TripRecommend";
 
 export default function Preview() {
   return (
-    <TripRecommend />
+    <TripRecommend centerPos={currentPos} />
   );
 }
