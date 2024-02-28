@@ -4,6 +4,7 @@ import MarkeredMap from '../map/MarkeredMap.jsx';
 import { useState, useEffect } from 'react';
 import FullSearch from '../api/FullSearch';
 import Example from '../mordal/Example.js';
+import { getFood } from '../localstorage/auth.js';
 
 const TripRecommend = ({ startPos, endPos, centerPos }) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -15,7 +16,7 @@ const TripRecommend = ({ startPos, endPos, centerPos }) => {
 
     const [exampleModalOpen, setExampleModalOpen] = useState(false);
     const [url, setUrl] = useState('');
-
+    const food = getFood();
     const handleClick = (url) => {
         setExampleModalOpen(true);
         setUrl(url);
@@ -34,7 +35,7 @@ const TripRecommend = ({ startPos, endPos, centerPos }) => {
         } else {
             alert('Geolocation을 사용할 수 없어요..');
         }
-        FullSearch([startPos, centerPos, centerPos, endPos, endPos], '물회')
+        FullSearch([startPos, centerPos, centerPos, endPos, endPos], food)
             .then((data) => {
                 setPlaces(data);
                 setIsLoading(false);
