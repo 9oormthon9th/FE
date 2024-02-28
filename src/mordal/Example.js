@@ -1,22 +1,32 @@
 import React, { useState } from 'react';
 import { styled } from 'styled-components';
 import { IoClose } from 'react-icons/io5';
+import Title from '../component/Title';
 
 const Example = ({ setExampleModalOpen }) => {
     return (
         <ViewContainer>
             <RootContainer>
                 <ModalContainer>
+                    <ModalTitle>
+                        <ModalDetail>예시 모달</ModalDetail>
+                        <IoClose
+                            size={'2rem'}
+                            onClick={() => {
+                                setExampleModalOpen(false);
+                            }}
+                        />
+                    </ModalTitle>
                     <InputList>
-                        <ModalTitle>
-                            <ModalDetail>예시 모달</ModalDetail>
-                            <IoClose
-                                size={'2rem'}
-                                onClick={() => {
-                                    setExampleModalOpen(false);
-                                }}
-                            />
-                        </ModalTitle>
+                        <Title text={'aa'} />
+                        <Title text={'aa'} />
+                        <Title text={'aa'} />
+                        <Title text={'aa'} />
+                        <Title text={'aa'} />
+                        <Title text={'aa'} />
+                        <Title text={'aa'} />
+                        <Title text={'aa'} />
+                        <Title text={'aa'} />
                     </InputList>
                 </ModalContainer>
             </RootContainer>
@@ -37,7 +47,7 @@ const RootContainer = styled.div`
     background-color: rgb(0 0 0 / 30%);
     -webkit-tap-highlight-color: transparent;
     justify-content: center;
-    padding: 12vh 1.5rem;
+    padding: 1vh 1.5rem;
 `;
 
 const ModalContainer = styled.div`
@@ -66,16 +76,16 @@ const InputList = styled.div`
     flex: 1;
     overflow-y: auto;
     scroll-behavior: smooth;
-    max-height: 60vh;
+    height: 85vh;
 
     &::-webkit-scrollbar {
         width: 5px;
     }
 
     /* &::-webkit-scrollbar-thumb {
-      background-color: gray;
-      border-radius: 1rem;
-  } */
+        background-color: gray;
+        border-radius: 1rem;
+    } */
 
     &::-webkit-scrollbar-track {
         background-color: white;
