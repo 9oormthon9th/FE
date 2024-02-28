@@ -5,7 +5,9 @@ import { currentPos } from "../mocks/currentPos";
 import ResultPage from "./ResultPage";
 
 export default function Preview() {
-  testGpt("바다");
+  testGpt("바다").then((result) => {
+    console.log(result);
+  });
   return (
     <>PREIVEW</>
     // <ResultPage centerPos={currentPos} />
