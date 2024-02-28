@@ -16,7 +16,7 @@ const testGpt = async (theme, test = false) => {
       const json = await response.json();
       return {
         valid: true,
-        data: parseOllehResponse(json),
+        result: parseOllehResponse(json),
       };
     } else {
       // Handle the error if the request was not successful
@@ -27,7 +27,7 @@ const testGpt = async (theme, test = false) => {
     console.error(error);
     return {
       valid: false,
-      data: null,
+      result: null,
     };
   }
 };
