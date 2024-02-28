@@ -1,7 +1,6 @@
 const { kakao } = window;
 
 export default async function CategorySearchOneAsync(centerPos, categoryCode) {
-    console.log('KAKAO', window);
     let places = new kakao.maps.services.Places();
 
     return new Promise((resolve, reject) => {

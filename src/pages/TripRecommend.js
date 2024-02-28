@@ -30,7 +30,6 @@ const TripRecommend = ({ startPos, endPos, centerPos }) => {
                     lng: position.coords.longitude,
                 };
                 setCurrentPos(newPos);
-                console.log('New current position:', newPos); // 바로 새로운 위치 정보를 로그로 출력
             });
         } else {
             alert('Geolocation을 사용할 수 없어요..');

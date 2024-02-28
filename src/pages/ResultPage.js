@@ -9,7 +9,7 @@ const ResultPage = () => {
     const location = useLocation();
     const response = { ...location.state };
 
-    const image1 = response.image;
+    const image1 = response.image1;
     const courseName = response.courseName;
     const centerPos = response.centerPos;
     const startPos = response.startPos;

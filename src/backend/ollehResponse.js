@@ -1,19 +1,20 @@
 const parseOllehResponse = (response) => {
-  return {
-    startPlace: response["시작점"],
-    endPlace: response["종점"],
-    startLng: response["시작점 경도"],
-    startLat: response["시작점 위도"],
-    endLng: response["종점 경도"],
-    endLat: response["종점 위도"],
-    expectedTime: response["예상 소요 시간"],
-    courseNumber: response["올레길 코스 번호"],
-    courseName: response["올레길 코스 이름"],
-    totalKm: response["총 길이(KM)"],
-    wheelchair: response["휠체어 구간 유무"],
-    description: response["description"],
-    image1: response["image"],
-  };
+
+    return {
+        startPlace: response['시작점'],
+        endPlace: response['종점'],
+        startLng: response['시작점 경도'],
+        startLat: response['시작점 위도'],
+        endLng: response['종점 경도'],
+        endLat: response['종점 위도'],
+        expectedTime: response['예상 소요 시간'],
+        courseNumber: response['올레길 코스 번호'],
+        courseName: response['올레길 코스 이름'],
+        totalKm: response['총 길이(KM)'],
+        wheelchair: response['휠체어 구간 유무'],
+        description: response['description'],
+        image1: response['image'],
+    };
 };
 
 // 시작점: "쇠소깍 다리"

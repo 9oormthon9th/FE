@@ -25,8 +25,6 @@ async function searchFiveTimes(centerPosList) {
       place: null,
     },
   ];
-  
-  console.log(centerPosList);
 
   const promises = [
     CategorySearchOneAsync(centerPosList[0], CategoryConst.food),

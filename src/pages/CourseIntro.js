@@ -1,8 +1,5 @@
 import React, { Image } from 'react';
 import MyButton from '../component/MyButton';
-import mock_image from '../mocks/images/2.jpg';
-import firstCourse from '../mocks/images/1코스.png';
-import untitle from '../mocks/images/untitle.png';
 import { primaryColor } from '../theme/color';
 import TripRecommend from './TripRecommend';
 
@@ -12,8 +9,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import 'swiper/css';
 
-const CourseIntro = ({ image, courseName, startPos, endPos, centerPos, description }) => {
-    const imgList = [image, firstCourse, untitle];
+const CourseIntro = ({ image1, image2, courseName, startPos, endPos, centerPos, description }) => {
+    const imgList = ["data:image/png;base64, "+image1, "data:image/png;base64, "+image2];
     return (
       // TODO: page layout can be extracted
       <>
