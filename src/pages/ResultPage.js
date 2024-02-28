@@ -8,7 +8,8 @@ import styled from 'styled-components';
 const ResultPage = () => {
     const location = useLocation();
     const response = { ...location.state };
-
+    
+    const courseName = response.courseName;
     const centerPos = response.centerPos;
     const startPos = response.startPos;
     const endPos = response.endPos;
@@ -23,6 +24,7 @@ const ResultPage = () => {
     return (
         <ResultContainer>
             <CourseIntro
+                courseName={courseName}
                 startPos={startPos}
                 endPos={endPos}
                 centerPos={centerPos}

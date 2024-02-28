@@ -34,6 +34,7 @@ export default function Poll() {
 
     navigate("/result", {
       state: {
+        courseName: result.courseNumber,
         startPos: {
           lat: result.startLat,
           lng: result.startLng,
@@ -42,7 +43,10 @@ export default function Poll() {
           lat: result.endLat,
           lng: result.endLng,
         },
-        centerPos: { lat: (result.startLat + result.endLat) / 2, lng: (result.startLng + result.endLng) / 2 },
+        centerPos: {
+          lat: (result.startLat + result.endLat) / 2,
+          lng: (result.startLng + result.endLng) / 2,
+        },
         description: result.description,
       },
     });
