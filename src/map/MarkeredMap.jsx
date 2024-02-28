@@ -5,9 +5,6 @@ export default function MarkeredMap({ centerPos, currentPos, places }) {
     const [isOpen, setIsOpen] = useState(-1);
     const [placeId, setPlaceId] = useState('');
 
-    console.log('PLACES', places);
-    console.log('center', centerPos);
-    console.log('current', currentPos);
     return (
       <>
         <Map
