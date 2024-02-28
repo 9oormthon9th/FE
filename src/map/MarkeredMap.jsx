@@ -1,7 +1,7 @@
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 import { useState } from "react";
 
-export default function BasicMap({places}) {
+export default function MarkeredMap({places}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
