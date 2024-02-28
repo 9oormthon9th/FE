@@ -4,7 +4,7 @@ const ready = async () => {
   console.log(hostname);
   try {
     // Make a request to the server to get the image
-    const response = await fetch(`http://${hostname}:5000/api/ready`, {
+    const response = await fetch(`https://${hostname}:5000/api/ready`, {
       method: "GET",
       // Add any necessary headers or parameters
     });
