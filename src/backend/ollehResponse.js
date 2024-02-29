@@ -1,21 +1,36 @@
 const parseOllehResponse = (response) => {
-    console.log('response', response);
-    return {
-        startPlace: response['시작점'],
-        endPlace: response['종점'],
-        startLng: response['시작점 경도'],
-        startLat: response['시작점 위도'],
-        endLng: response['종점 경도'],
-        endLat: response['종점 위도'],
-        expectedTime: response['예상 소요 시간'],
-        courseNumber: response['올레길 코스 번호'],
-        courseName: response['올레길 코스 이름'],
-        totalKm: response['총 길이(KM)'],
-        wheelchair: response['휠체어 구간 유무'],
-        description: response['description'],
-        image1: response['images'],
-        image2: response['image2'],
-    };
+    console.log("XXXX", "Before xx");
+
+  const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src =
+    "//dapi.kakao.com/v2/maps/sdk.js?appkey=2ca3e874ab120943d901e338daef61ff&libraries=services,clusterer";
+  script.async = true;
+  script.dataset.cfasync = false;
+  document.body.appendChild(script);
+  script.addEventListener("load", () => {
+    console.log("Script added successfully");
+    //   resolve();
+  });
+  console.log("Pass Script add");
+
+  console.log("response", response);
+  return {
+    startPlace: response["시작점"],
+    endPlace: response["종점"],
+    startLng: response["시작점 경도"],
+    startLat: response["시작점 위도"],
+    endLng: response["종점 경도"],
+    endLat: response["종점 위도"],
+    expectedTime: response["예상 소요 시간"],
+    courseNumber: response["올레길 코스 번호"],
+    courseName: response["올레길 코스 이름"],
+    totalKm: response["총 길이(KM)"],
+    wheelchair: response["휠체어 구간 유무"],
+    description: response["description"],
+    image1: response["images"],
+    image2: response["image2"],
+  };
 };
 
 // 시작점: "쇠소깍 다리"
