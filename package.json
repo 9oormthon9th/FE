@@ -10,6 +10,7 @@
     "pretendard": "^1.3.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.11.0",
     "react-kakao-maps-sdk": "^1.1.26",
     "react-router-dom": "^6.16.0",
@@ -44,5 +45,6 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1"
-  }
+  },
+  "proxy": "http://krmp-proxy.9rum.cc:3128"
 }
