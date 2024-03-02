@@ -6,7 +6,8 @@
 
 ### 로고 (대표이미지)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38d9d652-cc2e-4079-a7a8-f062fcf7124a/3bd92f04-29c0-469a-ad04-875b03b9cc11/Untitled.png)
+![걸엉가게](https://github.com/9oormthon9th/FE/assets/48922050/6ba7fae5-07c8-4517-b4cf-34e4b508f942)
+
 
 ### 팀원 소개
 
@@ -20,7 +21,8 @@
 
 - 제주도 올레길의 니즈파악
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38d9d652-cc2e-4079-a7a8-f062fcf7124a/75f75f1d-0b20-4171-8fc6-ea460963909c/Untitled.png)
+![Untitled (16)](https://github.com/9oormthon9th/FE/assets/48922050/3656c6a8-4df5-494d-9033-be7c2324f7fe)
+
 
 - 취향에 맞는 올레길을 생성형AI인 chatGPT에서 추천해주고 일정까지 짜주는 프로젝트 기획
     - 올레길 코스 27가지 중 한가지를 chatGPT가 추천
@@ -28,7 +30,8 @@
 
 ### 시스템 아키텍처
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38d9d652-cc2e-4079-a7a8-f062fcf7124a/fdd1955d-2e57-4537-a2b3-67ff969edc9a/Untitled.png)
+![Untitled (17)](https://github.com/9oormthon9th/FE/assets/48922050/9188a01b-5bdd-4182-acd2-c695cf89aca0)
+
 
 ### 개발/배포 정보
 
@@ -42,4 +45,5 @@ https://www.youtube.com/watch?v=EHOawD1QRbw&t=1s
 
 ### 마무리 코멘트
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38d9d652-cc2e-4079-a7a8-f062fcf7124a/78e0aee2-eca4-4d0b-9498-b540fb85683a/Untitled.png)
+![Untitled (18)](https://github.com/9oormthon9th/FE/assets/48922050/41c19109-3649-4559-a2d0-4f8e0a8740f5)
+
