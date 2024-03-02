@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# 걸엉가게
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+카카오 X 구름 [구름톤 9기] 우수상 수상
 
-## Available Scripts
+주제 : 제주 + 클라우드 + 스마트관광(생성형AI)
 
-In the project directory, you can run:
+### 로고 (대표이미지)
 
-### `npm start`
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38d9d652-cc2e-4079-a7a8-f062fcf7124a/3bd92f04-29c0-469a-ad04-875b03b9cc11/Untitled.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 팀원 소개
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 김지혁(기획자)
+- 팽건우(디자이너)
+- 김미애(백엔드)
+- 김건우(프론트엔드)
+- 홍창현(프론트엔드)
 
-### `npm test`
+### 프로젝트
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 제주도 올레길의 니즈파악
 
-### `npm run build`
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38d9d652-cc2e-4079-a7a8-f062fcf7124a/75f75f1d-0b20-4171-8fc6-ea460963909c/Untitled.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 취향에 맞는 올레길을 생성형AI인 chatGPT에서 추천해주고 일정까지 짜주는 프로젝트 기획
+    - 올레길 코스 27가지 중 한가지를 chatGPT가 추천
+    - 카카오지도 API를 통해 코스를 기반으로 한 지도 생성 및 상세정보 확인
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 시스템 아키텍처
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38d9d652-cc2e-4079-a7a8-f062fcf7124a/fdd1955d-2e57-4537-a2b3-67ff969edc9a/Untitled.png)
 
-### `npm run eject`
+### 개발/배포 정보
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+생성형 AI인 chatGPT와 카카오지도 API를 이용하여 구성
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+구름 X 카카오의 크램폴린IDE를 이용하여 배포 (배포버전은 카카오지도 API가 보안문제때문에 작동하지 않음)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 시연 영상
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+https://www.youtube.com/watch?v=EHOawD1QRbw&t=1s
 
-## Learn More
+### 마무리 코멘트
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38d9d652-cc2e-4079-a7a8-f062fcf7124a/78e0aee2-eca4-4d0b-9498-b540fb85683a/Untitled.png)
