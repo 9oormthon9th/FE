@@ -60,7 +60,8 @@ const ResultContainer = styled.div`
     flex: 1;
     overflow-y: auto;
     scroll-behavior: smooth;
-    max-height: 45rem;
+    /* max-height: 45rem; */
+    height: 100%;
 
     &::-webkit-scrollbar {
         width: 5px;
