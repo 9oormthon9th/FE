@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/kakao-api/*"
+  to = "https://dapi.kakao.com/:splat"
+  status = 200
+  force = true
+  headers = {Authorization = "KakaoAK 2ca3e874ab120943d901e338daef61ff"}
