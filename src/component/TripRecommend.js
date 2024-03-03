@@ -2,7 +2,7 @@ import React from 'react';
 import { primaryColor } from '../theme/color.js';
 import MarkeredMap from '../map/MarkeredMap.jsx';
 import { useState, useEffect } from 'react';
-import FullSearch from '../api/FullSearch.js';
+import FullSearch from '../kakaoApi/FullSearch.js';
 import Example from '../mordal/Example.js';
 import { getFood } from '../localstorage/auth.js';
 
