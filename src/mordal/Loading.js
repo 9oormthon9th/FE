@@ -31,7 +31,7 @@ const Loading = () => {
         return Array.from({ length: number }).map((_, i) => (
             <Dot
                 key={i}
-                finalOpacity={initialOpacity + i * 0.05} // Dot별로 최종 투명도를 계산하여 전달합니다.
+                $finalOpacity={initialOpacity + i * 0.05} // Dot별로 최종 투명도를 계산하여 전달합니다.
                 style={{
                     animationDelay: `${i * 0.5}s`, // 각 Dot의 애니메이션 지연 시간 설정
                 }}
@@ -126,12 +126,6 @@ const DotThird = styled.div`
     align-items: center;
 `;
 
-const DotColumn = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-right: 0.3rem;
-`;
-
 const fadeIn = (finalOpacity) => keyframes`
   from {
     opacity: 0;
@@ -149,10 +143,10 @@ const Dot = styled.div`
     margin: 0 0.5rem;
     opacity: 0;
     // props를 통해 finalOpacity 값을 받아서 애니메이션에 적용
-    ${({ finalOpacity }) =>
-        finalOpacity &&
+    ${({ $finalOpacity }) =>
+        $finalOpacity &&
         css`
-            animation: ${fadeIn(finalOpacity)} 0.5s ease-in-out forwards;
+            animation: ${fadeIn($finalOpacity)} 0.5s ease-in-out forwards;
         `}
 `;
 

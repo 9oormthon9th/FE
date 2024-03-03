@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import InputLine from '../component/InputLine';
 import MyButton from './../component/MyButton';
 import Title from '../component/Title';
@@ -20,7 +20,6 @@ export default function Poll() {
         getAnswer() || getFood() ? false : true
     );
     const [loadingModalOpen, setLoadingModalOpen] = useState(false); // 로딩 상태 추가
-    const [response, setResponse] = useState(null); // 백엔드 응답 상태 추가
 
     const navigate = useNavigate();
 

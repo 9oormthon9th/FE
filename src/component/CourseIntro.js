@@ -1,7 +1,5 @@
-import React, { Image } from 'react';
-import MyButton from './MyButton';
+import React from 'react';
 import { primaryColor } from '../theme/color';
-import TripRecommend from './TripRecommend';
 
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,7 +10,6 @@ import 'swiper/css';
 const CourseIntro = ({ image1, image2, courseName, startPos, endPos, centerPos, description }) => {
     const imgList = ["data:image/png;base64, "+image1, "data:image/png;base64, "+image2];
     return (
-      // TODO: page layout can be extracted
       <>
         <h1 className={`text-3xl jeju-font text-[${primaryColor}] mb-10 ml-1`}>
           {courseName}를 추천해요

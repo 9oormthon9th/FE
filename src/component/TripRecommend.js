@@ -1,5 +1,4 @@
 import React from 'react';
-import { primaryColor } from '../theme/color.js';
 import MarkeredMap from '../map/MarkeredMap.jsx';
 import { useState, useEffect } from 'react';
 import FullSearch from '../kakaoApi/FullSearch.js';
@@ -25,28 +24,28 @@ const TripRecommend = ({ startPos, endPos, centerPos }) => {
     };
 
     useEffect(() => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                const newPos = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude,
-                };
-                setCurrentPos(newPos);
-            });
-        } else {
-            alert('Geolocation을 사용할 수 없어요..');
-        }
-        FullSearch([startPos, centerPos, centerPos, endPos, endPos], food)
-            .then((data) => {
-                setPlaces(data);
-                setIsLoading(false);
-            })
-            .catch((error) => {
-                // TODO: Error handling
-                console.error(error);
-                setIsLoading(false);
-            });
-    }, []);
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const newPos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          setCurrentPos(newPos);
+        });
+      } else {
+        alert("Geolocation을 사용할 수 없어요..");
+      }
+      FullSearch([startPos, centerPos, centerPos, endPos, endPos], food)
+        .then((data) => {
+          setPlaces(data);
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          // TODO: Error handling
+          console.error(error);
+          setIsLoading(false);
+        });
+    }, [startPos, centerPos, endPos, food]);
 
     const placeList = recommendationList.map(
         (recommendation) => recommendation.place
