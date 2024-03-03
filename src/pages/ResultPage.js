@@ -11,7 +11,7 @@ const ResultPage = () => {
 
     const image1 = response.image1;
     const image2 = response.image2;
-    const courseName = response.courseName;
+    const courseName = response.courseName; 
     const centerPos = response.centerPos;
     const startPos = response.startPos;
     const endPos = response.endPos;
