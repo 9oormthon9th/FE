@@ -40,7 +40,7 @@ const Loading = () => {
   };
 
   return (
-    <div className='flex bg-black justify-center'>
+    <div className='flex m-4 bg-black justify-center'>
       <ModalContainer>
         <Title text={'걸엉가게'} />
         <div className='text-primary mb-1 pb-5 pl-2'>
@@ -76,7 +76,6 @@ const ModalContainer = styled.div`
   position: relative;
   background: white;
   transition: all 400ms ease-in-out 2s;
-  padding: 2rem 0 0 2rem;
   display: flex;
   flex-direction: column;
   width: 100%;

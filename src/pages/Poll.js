@@ -34,36 +34,30 @@ export default function Poll() {
       return;
     }
 
-    const randomDelay =
-      // Math.floor(Math.random() * (15000 - 8000 + 1)) + 8000;
-      2000;
+    setLoadingModalOpen(false);
 
-    setTimeout(() => {
-      setLoadingModalOpen(false);
-
-      navigate('/result', {
-        state: {
-          image1: result.image1,
-          image2: result.image2,
-          courseName: result.courseNumber,
-          startPos: {
-            lat: result.startLat,
-            lng: result.startLng,
-          },
-          endPos: {
-            lat: result.endLat,
-            lng: result.endLng,
-          },
-          centerPos: {
-            lat: (result.startLat + result.endLat) / 2,
-            lng: (result.startLng + result.endLng) / 2,
-          },
-          description: result.description,
+    navigate('/result', {
+      state: {
+        image1: result.image1,
+        image2: result.image2,
+        courseName: result.courseNumber,
+        startPos: {
+          lat: result.startLat,
+          lng: result.startLng,
         },
-      });
+        endPos: {
+          lat: result.endLat,
+          lng: result.endLng,
+        },
+        centerPos: {
+          lat: (result.startLat + result.endLat) / 2,
+          lng: (result.startLng + result.endLng) / 2,
+        },
+        description: result.description,
+      },
+    });
 
-      setInfo(answer, food);
-    }, randomDelay);
+    setInfo(answer, food);
   };
 
   const styleAnswer = (answer) => {
@@ -92,37 +86,33 @@ export default function Poll() {
     }
   };
 
-  return (
+  return loadingModalOpen ? (
+    <Loading />
+  ) : (
     <div className='flex flex-col m-4'>
-      {loadingModalOpen ? (
-        <Loading />
-      ) : (
-        <>
-          <Title text={'걸엉가게'} />
-          <div className='mb-4 mt-4'>가고싶은 올레길을 알려주세요</div>
-          <div className='flex'>
-            <input
-              className='border-none focus:border-transparent outline-none'
-              placeholder={'#바다가보이는'}
-              value={answer}
-              onChange={handleAnswerChange}
-            />
-          </div>
-          <div className='bg-black h-[1px] my-2'></div>
-          <div className='mb-4 mt-4'>먹고싶은 음식을 알려주세요</div>
-          <InputLine
-            placeholder='#돼지고기'
-            value={food}
-            onChange={handleFoodChange}
-          />
-          <div className='m-5' />
-          <MyButton
-            text={'일정 생성하기'}
-            onClick={handleClick}
-            disabled={buttonEnabled}
-          />
-        </>
-      )}
+      <Title text={'걸엉가게'} />
+      <div className='mb-4 mt-4'>가고싶은 올레길을 알려주세요</div>
+      <div className='flex'>
+        <input
+          className='border-none focus:border-transparent outline-none'
+          placeholder={'#바다가보이는'}
+          value={answer}
+          onChange={handleAnswerChange}
+        />
+      </div>
+      <div className='bg-black h-[1px] my-2'></div>
+      <div className='mb-4 mt-4'>먹고싶은 음식을 알려주세요</div>
+      <InputLine
+        placeholder='#돼지고기'
+        value={food}
+        onChange={handleFoodChange}
+      />
+      <div className='m-5' />
+      <MyButton
+        text={'일정 생성하기'}
+        onClick={handleClick}
+        disabled={buttonEnabled}
+      />
     </div>
   );
 }
