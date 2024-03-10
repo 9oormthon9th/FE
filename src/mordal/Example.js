@@ -1,5 +1,5 @@
-import { styled } from "styled-components";
-import { IoClose } from "react-icons/io5";
+import { styled } from 'styled-components';
+import { IoClose } from 'react-icons/io5';
 
 const Example = ({ url, name, setExampleModalOpen }) => {
   return (
@@ -10,18 +10,18 @@ const Example = ({ url, name, setExampleModalOpen }) => {
             <TitleBar>
               <Title>{name}</Title>
               <IoClose
-                size={"2rem"}
+                size={'2rem'}
                 onClick={() => {
                   setExampleModalOpen(false);
                 }}
-                style={{ cursor: "pointer" }}
+                style={{ cursor: 'pointer' }}
               />
             </TitleBar>
             <Contents>
               <iframe
-                id="iFrameExample"
-                title="iFrame Example"
-                className="w-full h-full"
+                id='iFrameExample'
+                title='iFrame Example'
+                className='w-full h-full'
                 src={url}
               ></iframe>
             </Contents>
@@ -44,7 +44,7 @@ const RootContainer = styled.div`
   inset: 0;
   background-color: rgb(0 0 0 / 30%);
   -webkit-tap-highlight-color: transparent;
-  
+
   /* Way to center the child */
   height: 100vh;
   width: 100vw;
@@ -55,7 +55,7 @@ const RootContainer = styled.div`
 const CenteredContainer = styled.div`
   position: relative;
   transition: all 400ms ease-in-out 2s;
-  
+
   /* Apply max-width & padding around mordal */
   height: 100%;
   width: 100%;
@@ -68,7 +68,7 @@ const RealModal = styled.div`
   border-radius: 12px;
   height: 100%;
   width: 100%;
-  
+
   display: flex;
   flex-direction: column;
   padding: 2rem;
