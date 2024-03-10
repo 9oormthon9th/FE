@@ -2,7 +2,6 @@ import CourseIntro from '../component/CourseIntro';
 import TripRecommend from '../component/TripRecommend';
 import MyButton from '../component/MyButton';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { primaryColor } from '../theme/color';
 import styled from 'styled-components';
 
 const ResultPage = () => {
@@ -45,7 +44,7 @@ const ResultPage = () => {
 
             <hr className='my-3 border-none' />
 
-            <SubmitButton text='다시 추천받기' onClick={handleClick} variant />
+            <MyButton text='다시 추천받기' onClick={handleClick} />
         </ResultContainer>
     );
 };
@@ -80,19 +79,4 @@ const ResultContainer = styled.div`
         background-color: red;
         border-radius: 1rem;
     } */
-`;
-
-const SubmitButton = styled(MyButton)`
-    &:hover {
-        background-color: ${primaryColor};
-        opacity: 0.5;
-        color: white;
-        cursor: pointer;
-    }
-    &:active {
-        background-color: ${primaryColor};
-        color: white;
-    }
-    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out,
-        opacity 0.15s ease-in-out;
 `;
