@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 const FetchAndLoading = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -8,7 +8,7 @@ const FetchAndLoading = ({ children }) => {
       // Make the server request here
       // Replace the URL with your actual server endpoint
       const response = await fetch(
-        "https://jsonplaceholder.typicode.com/posts"
+        'https://jsonplaceholder.typicode.com/posts'
       );
       const data = await response.json();
 
@@ -22,7 +22,7 @@ const FetchAndLoading = ({ children }) => {
     fetchData();
   }, []);
 
-  return isLoading ? "Loading" : children;
+  return isLoading ? 'Loading' : children;
 };
 
 export default FetchAndLoading;
