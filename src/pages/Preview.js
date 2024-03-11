@@ -1,11 +1,8 @@
-import testGpt from '../backend/testGpt';
+import backendAPI from '../backend/backend';
 
 export default function Preview() {
-  testGpt('바다').then((result) => {
+  backendAPI.ready().then((result) => {
     console.log(result);
   });
-  return (
-    <>PREIVEW</>
-    // <ResultPage centerPos={currentPos} />
-  );
+  return <>PREIVEW</>;
 }
