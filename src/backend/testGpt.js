@@ -1,14 +1,14 @@
-import parseOllehResponse from "./ollehResponse";
+import parseOllehResponse from './ollehResponse';
 
 const testGpt = async (theme, test = false) => {
   const url = `https://k7c2e2155cca0a.user-app.krampoline.com/api/${
-    test ? "testchatgpt" : "chatgpt"
+    test ? 'testchatgpt' : 'chatgpt'
   }?theme=${theme}`;
 
   try {
     // Make a request to the server to get the image
     const response = await fetch(url, {
-      method: "GET",
+      method: 'GET',
     });
 
     // Check if the request was successful
@@ -20,7 +20,7 @@ const testGpt = async (theme, test = false) => {
       };
     } else {
       // Handle the error if the request was not successful
-      throw new Error("Failed to get image from server");
+      throw new Error('Failed to get image from server');
     }
   } catch (error) {
     // Handle any other errors that may occur
