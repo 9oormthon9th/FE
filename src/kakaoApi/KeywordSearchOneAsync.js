@@ -5,6 +5,7 @@ export default async function KeywordSearchOneAsync(centerPos, keyword) {
 
   return new Promise((resolve, reject) => {
     let callback = (data, status, _pagination) => {
+      console.log('KEYWORD', data);
       if (status === kakao.maps.services.Status.OK) {
         // Currently, return only one place
         if (data.length === 0) {
