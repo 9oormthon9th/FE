@@ -37,7 +37,7 @@
 
 생성형 AI인 chatGPT와 카카오지도 API를 이용하여 구성
 
-구름 X 카카오의 크램폴린IDE를 이용하여 배포
+구름 X 카카오의 크램폴린IDE를 이용하여 배포 배포링크 : https://k7c2e2155cca0a.user-app.krampoline.com/
 
 ### 시연 영상
 
