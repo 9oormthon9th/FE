@@ -64,10 +64,11 @@ const TripRecommend = ({ startPos, endPos, centerPos }) => {
             key={index}
             className='flex h-16 rounded-lg bg-[#F2F4F6]'
             onClick={() => {
-              handleClick(
-                recommendation.place.place_url,
-                recommendation.place.place_name
+              let url_https = recommendation.place.place_url.replace(
+                /^http:\/\//i,
+                'https://'
               );
+              handleClick(url_https, recommendation.place.place_name);
             }}
             style={{ cursor: 'pointer' }}
           >
