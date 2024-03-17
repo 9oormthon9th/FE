@@ -1,4 +1,5 @@
 import env from '../env';
+import parseOllehResponse from './ollehResponse';
 
 /**
  * @param {string} path ex) `/ready`
@@ -31,8 +32,8 @@ const backendAPI = {
       throw error;
     }
   },
-  courseRecommend: async (themeInput) => {
-    const url = getURL(`/recommend?theme=${themeInput}`);
+  test_course_info: async (themeInput) => {
+    const url = getURL(`/test/course?theme=${themeInput}`);
     try {
       // Make a request to the server to get the image
       const response = await fetch(url, {
@@ -44,7 +45,7 @@ const backendAPI = {
         const json = await response.json();
         return {
           valid: true,
-          result: json,
+          result: parseOllehResponse(json),
         };
       } else {
         // Handle the error if the request was not successful
@@ -59,33 +60,11 @@ const backendAPI = {
       };
     }
   },
-  courseInfo: async (courseId) => {
+  gpt_course_info: async (themeInput) => {
+    const url = getURL(`/course?theme=${themeInput}`);
     try {
-      const response = await fetch(getURL(`/course?id=${courseId}`), {
-        method: 'GET',
-      });
-
-      // Check if the request was successful
-      if (response.ok) {
-        const json = await response.json();
-        // parseOllehResponse(json);
-        return {
-          valid: true,
-          result: json,
-        };
-      } else {
-        // Handle the error if the request was not successful
-        throw new Error('Response not OK');
-      }
-    } catch (error) {
-      // Handle any other errors that may occur
-      console.error(error);
-      throw error;
-    }
-  },
-  foodParse: async (foodInput) => {
-    try {
-      const response = await fetch(getURL(`/food?food=${foodInput}`), {
+      // Make a request to the server to get the image
+      const response = await fetch(url, {
         method: 'GET',
       });
 
@@ -94,16 +73,19 @@ const backendAPI = {
         const json = await response.json();
         return {
           valid: true,
-          result: json,
+          result: parseOllehResponse(json),
         };
       } else {
         // Handle the error if the request was not successful
-        throw new Error('Response not OK');
+        throw new Error('Failed to get image from server');
       }
     } catch (error) {
       // Handle any other errors that may occur
       console.error(error);
-      throw error;
+      return {
+        valid: false,
+        result: null,
+      };
     }
   },
 };
