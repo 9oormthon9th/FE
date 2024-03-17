@@ -5,7 +5,7 @@ import Title from '../component/Title';
 import { useNavigate } from 'react-router-dom';
 import Loading from '../mordal/Loading';
 import { getAnswer, getFood, setInfo } from '../localstorage/auth';
-import testGpt from '../backend/testGpt';
+import backendAPI from '../backend/backend';
 
 export default function Poll() {
   const [answer, setAnswer] = useState(() => {
@@ -27,7 +27,7 @@ export default function Poll() {
     setLoadingModalOpen(true); // 로딩 모달을 열어줍니다.
 
     const theme = answer.substring(1);
-    const { valid, result } = await testGpt(theme);
+    const { valid, result } = await backendAPI.gpt_course_info(theme);
 
     if (!valid) {
       navigate('/error');
