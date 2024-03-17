@@ -37,6 +37,10 @@ async function searchFiveTimes(centerPosList) {
   const xx = await Promise.all(promises);
   for (let i = 0; i < 5; i++) {
     results[i].place = xx[i];
+    results[i].place.place_url = results[i].place.place_url.replace(
+      /^http:\/\//i,
+      'https://'
+    );
   }
 
   return results;
