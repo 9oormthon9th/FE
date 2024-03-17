@@ -1,22 +1,16 @@
-const baseURL = process.env.REACT_APP_BACKEND_URL;
-// Maybe baseURL could be https://${hostname}
-if (!('REACT_APP_BACKEND_URL' in process.env)) {
-  console.error('REACT_APP_BACKEND_URL is not set in .env');
-} else {
-  console.log('BaseURL:', baseURL);
-}
+import env from '../env';
 
 /**
  * @param {string} path ex) `/ready`
  */
-const fullURL = (path) => `${baseURL}${path}`;
+const getURL = (path) => `${env.baseURL}${path}`;
 
 // TODO: response part is duplicated
 const backendAPI = {
   ready: async () => {
     try {
       // Make a request to the server to get the image
-      const response = await fetch(fullURL('/ready'), {
+      const response = await fetch(getURL('/ready'), {
         method: 'GET',
       });
 
@@ -38,7 +32,7 @@ const backendAPI = {
     }
   },
   courseRecommend: async (themeInput) => {
-    const url = fullURL(`/recommend?theme=${themeInput}`);
+    const url = getURL(`/recommend?theme=${themeInput}`);
     try {
       // Make a request to the server to get the image
       const response = await fetch(url, {
@@ -67,7 +61,7 @@ const backendAPI = {
   },
   courseInfo: async (courseId) => {
     try {
-      const response = await fetch(fullURL(`/course?id=${courseId}`), {
+      const response = await fetch(getURL(`/course?id=${courseId}`), {
         method: 'GET',
       });
 
@@ -91,7 +85,7 @@ const backendAPI = {
   },
   foodParse: async (foodInput) => {
     try {
-      const response = await fetch(fullURL(`/food?food=${foodInput}`), {
+      const response = await fetch(getURL(`/food?food=${foodInput}`), {
         method: 'GET',
       });
 
