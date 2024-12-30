@@ -1,8 +1,11 @@
 # 걸엉가게
 
-카카오 X 구름 [구름톤 9기] 우수상 수상
-
-주제 : 제주 + 클라우드 + 스마트관광(생성형AI)
+카카오 X 구름 [구름톤 9기] 우수상 수상  
+https://9oormthon.goorm.io/e8282ccf-06d7-44fc-bbab-8490648e043b
+<br>
+<br>
+<br>
+**주제 : 제주 + 클라우드 + 스마트관광(생성형AI)**
 
 ### 로고 (대표이미지)
 
@@ -37,7 +40,7 @@
 
 생성형 AI인 chatGPT와 카카오지도 API를 이용하여 구성
 
-구름 X 카카오의 크램폴린IDE를 이용하여 배포 배포링크 : https://k7c2e2155cca0a.user-app.krampoline.com/
+구름 X 카카오의 크램폴린IDE를 이용하여 배포 배포링크 : https://k22436ad0170da.user-app.krampoline.com/
 
 ### 시연 영상
 
