@@ -14,7 +14,7 @@ export default function MarkeredMap({ centerPos, currentPos, places }) {
       level={7}
     >
       {places.map((place, index) => (
-        <React.Fragment key={place.place_name}>
+        <React.Fragment key={place.place_name + index}>
           <MapMarker
             position={{ lat: place.y, lng: place.x }}
             clickable={true}
